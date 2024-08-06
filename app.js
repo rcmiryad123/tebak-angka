@@ -4,9 +4,8 @@ const targetNum = Math.floor(Math.random() * maxsimum) + 1;
 let guess = prompt("Masukan Nilai Tebakan Pertama Anda");
 let attempts = 1;
 
-while (guess != targetNum) {
+while (guess.toLocaleLowerCase != targetNum) {
     if (guess == "menyerah") {
-        alert("Anda Menyerah, sayang sekali.");
         break;        
     }else {
         attempts++;
@@ -18,4 +17,8 @@ while (guess != targetNum) {
     }
 }
 
-alert(`Selamat! Anda menebak dengan benar. Nilai target adalah ${targetNum} & Anda menebak ${attempts} kali.`);
+if (guess == "menyerah") {
+    alert("Anda Menyerah, sayang sekali.");
+}else {
+    alert(`Selamat! Anda menebak dengan benar. Nilai target adalah ${targetNum} & Anda menebak ${attempts} kali.`);
+}
