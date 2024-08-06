@@ -5,11 +5,16 @@ let guess = parseInt(prompt("Masukan Nilai Tebakan Pertama Anda"));
 let attempts = 1;
 
 while (guess !== targetNum) {
-    attempts++;
-    if (guess > targetNum) {
-        guess = parseInt(prompt("Nilai Tebakan Terlalu Tinggi"));
-    } else {
-        guess = parseInt(prompt("Nilai Tebakan Terlalu Rendah"));
+    if (guess === null) {
+        alert("Anda membatalkan permainan.");
+        break;        
+    }else {
+        attempts++;
+        if (guess > targetNum) {
+            guess = parseInt(prompt("Nilai Tebakan Terlalu Tinggi"));
+        } else {
+            guess = parseInt(prompt("Nilai Tebakan Terlalu Rendah"));
+        }
     }
 }
 
