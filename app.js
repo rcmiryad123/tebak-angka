@@ -1,19 +1,19 @@
 const maxsimum = parseInt(prompt("Masukan Nilai Maksimum"));
 const targetNum = Math.floor(Math.random() * maxsimum) + 1;
 
-let guess = parseInt(prompt("Masukan Nilai Tebakan Pertama Anda"));
+let guess = prompt("Masukan Nilai Tebakan Pertama Anda");
 let attempts = 1;
 
-while (guess !== targetNum) {
-    if (guess === null) {
-        alert("Anda membatalkan permainan.");
+while (guess != targetNum) {
+    if (guess == "menyerah") {
+        alert("Anda Menyerah, sayang sekali.");
         break;        
     }else {
         attempts++;
         if (guess > targetNum) {
-            guess = parseInt(prompt("Nilai Tebakan Terlalu Tinggi"));
+            guess = prompt("Nilai Tebakan Terlalu Tinggi, ketik 'menyerah' untuk menyerah");
         } else {
-            guess = parseInt(prompt("Nilai Tebakan Terlalu Rendah"));
+            guess = prompt("Nilai Tebakan Terlalu Rendah, ketik 'menyerah' untuk menyerah");
         }
     }
 }
